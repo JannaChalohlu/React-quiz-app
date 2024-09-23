@@ -1,9 +1,7 @@
-Check your react knowledge ;)
+Check your react knowledge :wink:
 
-![React-quiz image](public/Quiz.png)
+![React-quiz image](client/public/Quiz.png)
 
-1. npm install => npm start
-2. open new tab in Terminal => npm run server
 
-Good luck!
+Good luck! :muscle:
 
