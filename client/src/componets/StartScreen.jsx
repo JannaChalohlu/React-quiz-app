@@ -1,9 +1,9 @@
 import { useContext } from "react"
 import {QuizContext} from '../contexts/QuizContext'
-//import { useQuiz } from "../contexts/QuizContext"
+
 
 function StartScreen() {
-    // const {numQuestions, dispatch} = useQuiz()
+   
     const {numQuestions, dispatch} = useContext(QuizContext)
     return (
       <div className="start">

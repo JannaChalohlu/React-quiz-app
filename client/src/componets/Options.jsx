@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import {QuizContext} from '../contexts/QuizContext'
-//import { useQuiz } from "../contexts/QuizContext";
+
 
 function Options({question}) {
-    // const {dispatch, answer} = useQuiz()
+    
     const {dispatch, answer} = useContext(QuizContext)
   const hasAnswered = answer !== null;
 

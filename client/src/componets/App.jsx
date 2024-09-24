@@ -9,12 +9,11 @@ import Progress from "./Progress";
 import FinishScreen from "./FinishScreen";
 import Footer from "./Footer";
 import Timer from "./Timer";
-//import { useQuiz } from "../contexts/QuizContext";
 import { useContext } from "react";
 import {QuizContext} from '../contexts/QuizContext'
 
 function App() {
-  // const {status} = useQuiz()
+ 
   const {status} = useContext(QuizContext)
  
 

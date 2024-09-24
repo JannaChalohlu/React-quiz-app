@@ -1,4 +1,4 @@
-import { createContext, useReducer, useEffect, useContext } from "react"
+import { createContext, useReducer, useEffect } from "react"
 
 export const QuizContext = createContext()
 
@@ -31,7 +31,7 @@ function reducer(state, action) {
       return { ...state, status: "active", secondsRemaining: state.questions.length * SECS_PER_QUESTION };
     case "newAnswer":
       const question = state.questions.at(state.index);
-      //const question = state.questions[state.index];
+      
       return {
         ...state,
         answer: action.payload,
@@ -51,7 +51,7 @@ function reducer(state, action) {
       };
     case "restart":
       return { ...initialState, questions: state.questions, status: "ready" };
-    // return {...state, points: 0, highscore: 0, index: 0, answer: null, status: 'ready' }
+    
     case 'tick':
       return {...state, secondsRemaining: state.secondsRemaining -1, status: state.secondsRemaining === 0 ? "finished" : state.status}
     default:
@@ -74,7 +74,7 @@ function QuizProvider({children}) {
     async function getAllQuestions(){
       try{
          const response = await fetch(`${import.meta.env.VITE_API}/question/getAll`)
-        // const response = await fetch(`http://localhost:5100/question/getAll`)
+       
         if(response.ok){
           const data = await response.json()
           console.log(`data`, data);
@@ -115,11 +115,3 @@ function QuizProvider({children}) {
 
 export default QuizProvider
 
-// function useQuiz(){
-//     const context = useContext(QuizContext);
-//     if(context === undefined)
-//         throw new Error("QuizContext was used outside of the QuizProvider")
-//     return context
-// }
-
-// export {useQuiz}
