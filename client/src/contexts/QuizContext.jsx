@@ -31,6 +31,7 @@ function reducer(state, action) {
       return { ...state, status: "active", secondsRemaining: state.questions.length * SECS_PER_QUESTION };
     case "newAnswer":
       const question = state.questions.at(state.index);
+      //const question = state.questions[state.index];
       return {
         ...state,
         answer: action.payload,
@@ -72,7 +73,8 @@ function QuizProvider({children}) {
   useEffect(()=> {
     async function getAllQuestions(){
       try{
-        const response = await fetch(`${import.meta.env.VITE_API}/question/getAll`)
+         const response = await fetch(`${import.meta.env.VITE_API}/question/getAll`)
+        // const response = await fetch(`http://localhost:5100/question/getAll`)
         if(response.ok){
           const data = await response.json()
           console.log(`data`, data);
